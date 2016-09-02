@@ -77,39 +77,6 @@ public class SuiteFixtureListener implements ISuiteListener {
 					"Failed to read resource from " + iutRef, x);
 		}
 		params.remove(TestRunArg.IUT.toString());
-		
-        /*Map<String, String> params = suite.getXmlSuite().getParameters();
-        TestSuiteLogger.log(Level.CONFIG,
-                "Suite parameters\n" + params.toString());
-        String iutParam = params.get(TestRunArg.IUT.toString());
-        if ((null == iutParam) || iutParam.isEmpty()) {
-            throw new IllegalArgumentException(
-                    "Required test run parameter not found: "
-                            + TestRunArg.IUT.toString());
-        }
-        URI iutRef = URI.create(iutParam.trim());
-        File entityFile = null;
-        try {
-            entityFile = URIUtils.dereferenceURI(iutRef);
-        } catch (IOException iox) {
-            throw new RuntimeException("Failed to dereference resource located at "
-                    + iutRef, iox);
-        }
-        Document iutDoc = null;
-        try {
-            iutDoc = URIUtils.parseURI(entityFile.toURI());
-        } catch (Exception x) {
-            throw new RuntimeException("Failed to parse resource retrieved from "
-                    + iutRef, x);
-        }
-        suite.setAttribute(SuiteAttribute.TEST_SUBJECT.getName(), iutDoc);
-        if (TestSuiteLogger.isLoggable(Level.FINE)) {
-            StringBuilder logMsg = new StringBuilder(
-                    "Parsed resource retrieved from ");
-            logMsg.append(iutRef).append("\n");
-            logMsg.append(XMLUtils.writeNodeToString(iutDoc));
-            TestSuiteLogger.log(Level.FINE, logMsg.toString());
-        }*/
     }
 
     /**
